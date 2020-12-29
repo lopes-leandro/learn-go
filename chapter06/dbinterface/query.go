@@ -11,10 +11,20 @@ import(
 // e emite algumas consultas
 func Query(db DB)  error {
 	 name := "Aeron"
-	 rows, err := Query("SELECT name, created FROM example WHERE name=?", name)
+	 rows, err := db.Query("SELECT name, created FROM example WHERE name=?", name)
 	 if err != nil {
 		 return err
 	 }
 
-	 defer rows.
+	 defer  rows.Close()
+
+	 for rows.Next() {
+		 var e database.Example
+		 if err := rows.Scan(&e.Name, &e.Created); err != nil {
+			 return err
+		 }
+		 fmt.Printf("Resultados:\n\tName: %s\n\tCreated: %v\n", e.Name, e.Created)
+	 }
+
+	 return rows.Err()
 }

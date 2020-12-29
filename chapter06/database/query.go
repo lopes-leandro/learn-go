@@ -24,9 +24,8 @@ func Query(db *sql.DB, name string) error {
 		if err := rows.Scan(&e.Name, &e.Created); err != nil {
 			return err
 		}
-		fmt.Printf("Results:\n\tName: %s\n\tCreated: %v\n", e.Name, e.Created)
+		fmt.Printf("Resultados:\n\tName: %s\n\tCreated: %v\n", e.Name, e.Created)
 	}
 
 	return rows.Err()
-
 }
