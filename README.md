@@ -34,3 +34,8 @@ example
 { "_id" : ObjectId("5feb702d59dbbd90ffd84fd0"), "name" : "Washington", "pop" : 7062000 }
 { "_id" : ObjectId("5feb702d59dbbd90ffd84fd1"), "name" : "Oregon", "pop" : 3970000 }
 ``` 
+
+###Chapter07 - _Example - OAuth_
+
+CLIENT=584b2aca90c5273f6dee
+SECRET=36d6180dc41055321d76312df542fcfe98fec231
